@@ -1,11 +1,14 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
+const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 const Schema = mongoose.Schema;
 mongoose.promise = Promise;
 
 // Define userSchema
 const userSchema = new Schema({
+  firstName: { type: String, unique: true, required: true },
+  lastName: { type: String, unique: true, required: true },
+  email: { type: String, unique: true, required: true },
   username: { type: String, unique: true, required: true },
   password: { type: String, unique: true, required: true },
 });
@@ -21,9 +24,9 @@ userSchema.methods = {
 };
 
 // Define hooks for pre-saving
-userSchema.pre('save', function (next) {
+userSchema.pre("save", function (next) {
   if (!this.password) {
-    console.log('NO PASSWORD PROVIDED');
+    console.log("NO PASSWORD PROVIDED");
     next();
   } else {
     this.password = this.hashPassword(this.password);
@@ -31,6 +34,6 @@ userSchema.pre('save', function (next) {
   }
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
