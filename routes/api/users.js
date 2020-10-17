@@ -1,16 +1,16 @@
-const express = require('express');
+const express = require("express");
 
 const router = express.Router();
 
-const User = require('../../database/models/user');
-const passport = require('../../passport');
+const User = require("../../database/models/user");
+const passport = require("../../passport");
 
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   const { username, password } = req.body;
 
   User.findOne({ username: username }, (err, user) => {
     if (err) {
-      console.log('User Create Error: ', err);
+      console.log("User Create Error: ", err);
       return;
     }
 
@@ -35,20 +35,20 @@ router.post('/', (req, res) => {
 });
 
 router.post(
-  '/login',
+  "/login",
   (req, res, next) => {
     next();
   },
-  passport.authenticate('local'),
+  passport.authenticate("local"),
   (req, res) => {
-    console.log('LOGGED IN', req.user);
+    console.log("LOGGED IN", req.user);
     res.send({
       username: req.user.username,
     });
   }
 );
 
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   if (req.user) {
     res.json({ user: req.user });
   } else {
@@ -56,12 +56,12 @@ router.get('/', (req, res) => {
   }
 });
 
-router.post('/logout', (req, res) => {
+router.post("/logout", (req, res) => {
   if (req.user) {
     req.logout();
-    res.status(200).json({ msg: 'LOGGED OUT' });
+    res.status(200).json({ msg: "LOGGED OUT" });
   } else {
-    res.status(404).json({ msg: 'NO USER TO LOGOUT' });
+    res.status(404).json({ msg: "NO USER TO LOGOUT" });
   }
 });
 
