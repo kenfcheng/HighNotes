@@ -7,6 +7,7 @@ const SignUp = () => {
 
   const [signUpCreds, setSignUpCreds] = useState({
     username: "",
+    // email: "",
     password: "",
   });
 
@@ -18,10 +19,12 @@ const SignUp = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log("signup", signUpCreds);
 
     axios
       .post("/api/users", {
         username: signUpCreds.username,
+        // email: signUpCreds.email,
         password: signUpCreds.password,
       })
       .then((response) => {
@@ -41,7 +44,7 @@ const SignUp = () => {
       <h4>Sign Up</h4>
       <form className="form-signin">
         <label htmlFor="inputEmail" className="sr-only">
-          Email address
+          Email Address
         </label>
         <input
           type="email"

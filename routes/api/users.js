@@ -7,8 +7,10 @@ const passport = require("../../passport");
 
 router.post("/", (req, res) => {
   const { username, password } = req.body;
+  console.log("User", User);
 
   User.findOne({ username: username }, (err, user) => {
+    console.log("user", user);
     if (err) {
       console.log("User Create Error: ", err);
       return;
@@ -20,17 +22,17 @@ router.post("/", (req, res) => {
       });
       return;
     }
+    async function addUser() {
+      const newUser = new User({
+        username: username,
+        password: password,
+      });
 
-    const newUser = new User({
-      username: username,
-      password: password,
-    });
-
-    newUser.save((err, savedUser) => {
-      if (err) return res.json(err);
-
+      const savedUser = await User.create(newUser);
+      console.log("savedUser", savedUser);
       res.json(savedUser);
-    });
+    }
+    addUser();
   });
 });
 
