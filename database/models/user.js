@@ -15,7 +15,7 @@ const userSchema = new Schema({
     unique: false,
     required: false,
   },
-  aboutMe: { type: String, unique: false, required: false },
+  aboutMe: { type: String, unique: true, required: false },
 });
 
 // Define schema methods

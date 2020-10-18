@@ -7,8 +7,9 @@ const SignUp = () => {
 
   const [signUpCreds, setSignUpCreds] = useState({
     username: "",
-    // email: "",
+    email: "",
     password: "",
+    aboutMe: "",
   });
 
   const handleChange = (event) => {
@@ -24,8 +25,9 @@ const SignUp = () => {
     axios
       .post("/api/users", {
         username: signUpCreds.username,
-        // email: signUpCreds.email,
+        email: signUpCreds.email,
         password: signUpCreds.password,
+        aboutMe: signUpCreds.aboutMe,
       })
       .then((response) => {
         if (!response.data.error) {
@@ -50,8 +52,20 @@ const SignUp = () => {
           type="email"
           id="inputEmail"
           className="form-control"
-          name="username"
+          name="email"
           placeholder="Email address"
+          value={signUpCreds.email}
+          onChange={handleChange}
+        />
+        <label htmlFor="inputEmail" className="sr-only">
+          Create a Username
+        </label>
+        <input
+          type="username"
+          id="inputUsername"
+          className="form-control"
+          name="username"
+          placeholder="Username"
           value={signUpCreds.username}
           onChange={handleChange}
         />
@@ -67,6 +81,20 @@ const SignUp = () => {
           value={signUpCreds.password}
           onChange={handleChange}
         />
+        <div>
+          <label htmlFor="inputAboutMe" className="sr-only">
+            Write something about yourself!
+            <textarea
+              type="aboutMe"
+              id="inputAboutMe"
+              className="form-control"
+              name="aboutMe"
+              placeholder="aboutMe"
+              value={signUpCreds.aboutMe}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
         <button
           className="btn btn-lg btn-primary btn-block"
           type="submit"
