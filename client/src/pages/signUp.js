@@ -42,9 +42,22 @@ const SignUp = () => {
   };
 
   return (
-    <div className="text-center">
+    <div className="container text-center">
       <h4>Sign Up</h4>
       <form className="form-signin">
+        <label htmlFor="inputUsername" className="sr-only">
+          Username
+        </label>
+        <input
+          type="username"
+          id="inputUsername"
+          className="form-control"
+          name="username"
+          placeholder="Email address"
+          value={signUpCreds.username}
+          onChange={handleChange}
+        />
+        <br></br>
         <label htmlFor="inputEmail" className="sr-only">
           Email Address
         </label>
@@ -55,20 +68,10 @@ const SignUp = () => {
           name="email"
           placeholder="Email address"
           value={signUpCreds.email}
+
           onChange={handleChange}
         />
-        <label htmlFor="inputEmail" className="sr-only">
-          Create a Username
-        </label>
-        <input
-          type="username"
-          id="inputUsername"
-          className="form-control"
-          name="username"
-          placeholder="Username"
-          value={signUpCreds.username}
-          onChange={handleChange}
-        />
+        <br></br>
         <label htmlFor="inputPassword" className="sr-only">
           Password
         </label>
@@ -81,20 +84,7 @@ const SignUp = () => {
           value={signUpCreds.password}
           onChange={handleChange}
         />
-        <div>
-          <label htmlFor="inputAboutMe" className="sr-only">
-            Write something about yourself!
-            <textarea
-              type="aboutMe"
-              id="inputAboutMe"
-              className="form-control"
-              name="aboutMe"
-              placeholder="aboutMe"
-              value={signUpCreds.aboutMe}
-              onChange={handleChange}
-            />
-          </label>
-        </div>
+
         <button
           className="btn btn-lg btn-primary btn-block"
           type="submit"
