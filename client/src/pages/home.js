@@ -1,7 +1,14 @@
-import React from 'react';
+import React from "react";
+// import Geolocator from "../components/geolocator";
 
 const Home = (props) => {
-  return <div>WE ARE LOGGED IN</div>;
+  return (
+    <div>
+      <div>
+        <h2>WE ARE LOGGED IN</h2>
+      </div>
+    </div>
+  );
 };
 
 Home.propTypes = {};

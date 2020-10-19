@@ -9,6 +9,7 @@ const SignUp = () => {
     username: "",
     email: "",
     password: "",
+    aboutMe: "",
   });
 
   const handleChange = (event) => {
@@ -19,6 +20,7 @@ const SignUp = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log("signup", signUpCreds);
 
     axios
       .post("/api/users", {
@@ -57,7 +59,7 @@ const SignUp = () => {
         />
         <br></br>
         <label htmlFor="inputEmail" className="sr-only">
-          Email address
+          Email Address
         </label>
         <input
           type="email"
@@ -66,6 +68,7 @@ const SignUp = () => {
           name="email"
           placeholder="Email address"
           value={signUpCreds.email}
+
           onChange={handleChange}
         />
         <br></br>
@@ -81,19 +84,6 @@ const SignUp = () => {
           value={signUpCreds.password}
           onChange={handleChange}
         />
-        <br></br>
-        <label htmlFor="inputaboutMe" className="sr-only">
-          Write About Yourself!
-        </label>
-        <textarea
-          type="aboutMe"
-          id="inputaboutMe"
-          className="form-text"
-          name="aboutMe"
-          placeholder="aboutMe"
-          value={signUpCreds.aboutMe}
-          onChange={handleChange}
-        ></textarea>
 
         <button
           className="btn btn-lg btn-primary btn-block"
