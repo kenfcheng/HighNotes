@@ -3,11 +3,14 @@ const databaseId = "KaraokeBuddydb";
 const username = request.get("username");
 const password = request.get("password");
 const email = request.get("email");
+const aboutMe = request.get("aboutMe");
 
 // create user
 const userLoginInfo = DatabaseUser.signUp(databaseId, {
   username: username,
+  email: email,
   password: password,
+  aboutMe: aboutMe,
 });
 
 // create UserProfile
