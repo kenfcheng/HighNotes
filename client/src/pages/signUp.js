@@ -7,6 +7,7 @@ const SignUp = () => {
 
   const [signUpCreds, setSignUpCreds] = useState({
     username: "",
+    email: "",
     password: "",
   });
 
@@ -22,7 +23,9 @@ const SignUp = () => {
     axios
       .post("/api/users", {
         username: signUpCreds.username,
+        email: signUpCreds.email,
         password: signUpCreds.password,
+        aboutMe: signUpCreds.aboutMe,
       })
       .then((response) => {
         if (!response.data.error) {
@@ -37,9 +40,22 @@ const SignUp = () => {
   };
 
   return (
-    <div className="text-center">
+    <div className="container text-center">
       <h4>Sign Up</h4>
       <form className="form-signin">
+        <label htmlFor="inputUsername" className="sr-only">
+          Username
+        </label>
+        <input
+          type="username"
+          id="inputUsername"
+          className="form-control"
+          name="username"
+          placeholder="Email address"
+          value={signUpCreds.username}
+          onChange={handleChange}
+        />
+        <br></br>
         <label htmlFor="inputEmail" className="sr-only">
           Email address
         </label>
@@ -47,11 +63,12 @@ const SignUp = () => {
           type="email"
           id="inputEmail"
           className="form-control"
-          name="username"
+          name="email"
           placeholder="Email address"
-          value={signUpCreds.username}
+          value={signUpCreds.email}
           onChange={handleChange}
         />
+        <br></br>
         <label htmlFor="inputPassword" className="sr-only">
           Password
         </label>
@@ -64,6 +81,20 @@ const SignUp = () => {
           value={signUpCreds.password}
           onChange={handleChange}
         />
+        <br></br>
+        <label htmlFor="inputaboutMe" className="sr-only">
+          Write About Yourself!
+        </label>
+        <textarea
+          type="aboutMe"
+          id="inputaboutMe"
+          className="form-text"
+          name="aboutMe"
+          placeholder="aboutMe"
+          value={signUpCreds.aboutMe}
+          onChange={handleChange}
+        ></textarea>
+
         <button
           className="btn btn-lg btn-primary btn-block"
           type="submit"
