@@ -9,12 +9,9 @@ const userSchema = new Schema({
   username: { type: String, unique: true, required: true },
   password: { type: String, required: true },
   email: { type: String, unique: false, required: false },
-  picture: {
-    type: Buffer,
-    contentType: String,
-    unique: false,
-    required: false,
-  },
+  state: { type: String, unique: false, required: true },
+  city: { type: String, unique: false, required: true },
+  country: { type: String, unique: false, required: true },
   aboutMe: { type: String, unique: true, required: false },
 });
 

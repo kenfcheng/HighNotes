@@ -20,7 +20,7 @@ class UserMovement extends Component {
   render() {
     return (
       <div>
-        <h4>Using geolocation JavaScript API in React</h4>
+        <h4>Geolocation Render Test</h4>
       </div>
     );
   }
