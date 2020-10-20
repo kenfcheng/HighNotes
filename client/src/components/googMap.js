@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 
+// Google Map Embedded in Page
 const mapStyles = {
-  width: "100%",
-  height: "100%",
+  width: "50%",
+  height: "50%",
 };
 
 class GoogMap extends Component {
@@ -30,8 +31,8 @@ class GoogMap extends Component {
           zoom={14}
           style={mapStyles}
           initialCenter={{
-            lat: YOUR_LATITUDE,
-            lng: YOUR_LONGITUDE,
+            lat: 53.2734,
+            lng: -7.77832031,
           }}
         >
           <Marker onClick={this.onMarkerClick} name={"This is test name"} />

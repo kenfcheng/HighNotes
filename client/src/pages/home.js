@@ -1,5 +1,5 @@
 import React from "react";
-import Locator from "../components/locator";
+import CurrentPosition from "../components/currentPosition";
 import GoogMap from "../components/googMap";
 const Home = (props) => {
   return (
@@ -7,7 +7,7 @@ const Home = (props) => {
       <div>
         <h2>WE ARE LOGGED IN</h2>
       </div>
-      <Locator />
+      <CurrentPosition />
       <GoogMap />
     </div>
   );
