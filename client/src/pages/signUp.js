@@ -53,7 +53,7 @@ const SignUp = () => {
           id="inputUsername"
           className="form-control"
           name="username"
-          placeholder="Email address"
+          placeholder="Username"
           value={signUpCreds.username}
           onChange={handleChange}
         />
@@ -68,7 +68,6 @@ const SignUp = () => {
           name="email"
           placeholder="Email address"
           value={signUpCreds.email}
-
           onChange={handleChange}
         />
         <br></br>
@@ -84,6 +83,19 @@ const SignUp = () => {
           value={signUpCreds.password}
           onChange={handleChange}
         />
+        <br></br>
+        <label htmlFor="inputaboutMe" className="sr-only">
+          Write Something About You!
+        </label>
+        <textarea
+          className="form-text container"
+          type="aboutMe"
+          id="inputaboutMe"
+          name="aboutMe"
+          placeholder="aboutMe"
+          value={signUpCreds.aboutMe}
+          onChange={handleChange}
+        ></textarea>
 
         <button
           className="btn btn-lg btn-primary btn-block"

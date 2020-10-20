@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 
-class locator extends Component {
+// Gets User's Current Position
+class CurrentPosition extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -11,6 +12,11 @@ class locator extends Component {
     navigator.geolocation.getCurrentPosition(function (position) {
       console.log("Latitude is :", position.coords.latitude);
       console.log("Longitude is :", position.coords.longitude);
+      if ("geolocation" in navigator) {
+        console.log("Available");
+      } else {
+        console.log("Not Available");
+      }
     });
   }
 
@@ -21,14 +27,8 @@ class locator extends Component {
       </div>
     );
   }
-
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      console.log(position);
-    });
-  }
 }
 
-render(<locator />, document.getElementById("root"));
+render(<CurrentPosition />, document.getElementById("root"));
 
-export default locator;
+export default CurrentPosition;
