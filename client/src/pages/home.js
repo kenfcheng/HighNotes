@@ -1,12 +1,14 @@
 import React from "react";
-// import Geolocator from "../components/geolocator";
-
+import Locator from "../components/locator";
+import GoogMap from "../components/googMap";
 const Home = (props) => {
   return (
     <div>
       <div>
         <h2>WE ARE LOGGED IN</h2>
       </div>
+      <Locator />
+      <GoogMap />
     </div>
   );
 };
