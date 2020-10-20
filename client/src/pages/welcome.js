@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Button } from '@progress/kendo-react-buttons';
-import map;
+import map; force push
 
 class ButtonContainer extends React.Component {
     render() {
