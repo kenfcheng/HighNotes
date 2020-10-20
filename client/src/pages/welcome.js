@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Button } from '@progress/kendo-react-buttons';
-import map; force push
+import googmap;
 
 class ButtonContainer extends React.Component {
     render() {
