@@ -9,6 +9,9 @@ const SignUp = () => {
     username: "",
     email: "",
     password: "",
+    city: "",
+    state: "",
+    country: "",
     aboutMe: "",
   });
 
@@ -27,6 +30,9 @@ const SignUp = () => {
         username: signUpCreds.username,
         email: signUpCreds.email,
         password: signUpCreds.password,
+        city: signUpCreds.city,
+        state: signUpCreds.state,
+        country: signUpCreds.country,
         aboutMe: signUpCreds.aboutMe,
       })
       .then((response) => {
@@ -53,7 +59,7 @@ const SignUp = () => {
           id="inputUsername"
           className="form-control"
           name="username"
-          placeholder="Username"
+          placeholder="Email address"
           value={signUpCreds.username}
           onChange={handleChange}
         />
@@ -84,15 +90,40 @@ const SignUp = () => {
           onChange={handleChange}
         />
         <br></br>
-        <label htmlFor="inputaboutMe" className="sr-only">
-          Write Something About You!
+        <div className="container center row-1">
+          <label htmlFor="inputCity" className="sr-only container row-1 col-1">
+            City
+          </label>
+          <input
+            className="form-control"
+            name="city"
+            placeholder="City"
+            type="city"
+            value={signUpCreds.city}
+            onChange={handleChange}
+          />
+          <label htmlFor="inputState" className="sr-only container row-1 col-2">
+            State
+          </label>
+          <input
+            className="form-control"
+            name="state"
+            placeholder="State"
+            type="state"
+            value={signUpCreds.state}
+            onChange={handleChange}
+          />
+        </div>
+        <br></br>
+        <label htmFor="inputaboutMe" className="sr-only">
+          Write About Yourself!
         </label>
         <textarea
           className="form-text container"
           type="aboutMe"
-          id="inputaboutMe"
+          id="aboutMe"
           name="aboutMe"
-          placeholder="aboutMe"
+          placeholder="About Me"
           value={signUpCreds.aboutMe}
           onChange={handleChange}
         ></textarea>

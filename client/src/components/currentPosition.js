@@ -23,7 +23,7 @@ class CurrentPosition extends Component {
   render() {
     return (
       <div>
-        <h4>Using geolocation JavaScript API in React</h4>
+        <h4>Current Postion Render Test</h4>
       </div>
     );
   }
