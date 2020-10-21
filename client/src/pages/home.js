@@ -1,6 +1,6 @@
 import React from "react";
 import CurrentPosition from "../components/currentPosition";
-import GoogMap from "../components/googMap";
+// import GoogMap from "../components/googMap";
 const Home = (props) => {
   return (
     <div>
@@ -8,7 +8,6 @@ const Home = (props) => {
         <h2>WE ARE LOGGED IN</h2>
       </div>
       <CurrentPosition />
-      <GoogMap />
     </div>
   );
 };

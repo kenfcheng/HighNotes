@@ -113,6 +113,20 @@ const SignUp = () => {
             value={signUpCreds.state}
             onChange={handleChange}
           />
+          <label
+            htmlFor="inputCountry"
+            className="sr-only container row-1 col-2"
+          >
+            Country
+          </label>
+          <input
+            className="form-control"
+            name="country"
+            placeholder="Country"
+            type="country"
+            value={signUpCreds.country}
+            onChange={handleChange}
+          />
         </div>
         <br></br>
         <label htmFor="inputaboutMe" className="sr-only">
