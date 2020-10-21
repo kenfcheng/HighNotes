@@ -1,21 +1,20 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Button } from '@progress/kendo-react-buttons';
-import googmap;
 
 class ButtonContainer extends React.Component {
     render() {
         return (
-            <div className="col-xs-12 col-sm-6 example-col">
-                <p>Options</p>
-                <p>
-                <Button primary={true}>Browse</Button>
-                </p>
+            <div className="row example-wrapper">
+                <div className="col-xs-12 col-sm-6 example-col">
+                    <p>Default Buttons (Primary)</p>
+                    <p>
+                        <Button primary={true}>Profile</Button>;
+                        <Button primary={true}>Map</Button>;
+                        <Button primary={true}>Messages</Button>;
+                    </p>
+                </div>
             </div>
-        );
+        )
     }
 }
-ReactDOM.render(
-    <ButtonContainer />,
-    document.querySelector('my-app')
-);

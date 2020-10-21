@@ -9,6 +9,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "google": "^2.1.0",
+    "google-map-react": "^2.1.8",
     "if-env": "^1.0.4",
     "map": "^1.0.1",
     "mongo": "^0.1.0",
