@@ -12,6 +12,7 @@ class CurrentPosition extends Component {
     navigator.geolocation.getCurrentPosition(function (position) {
       console.log("Latitude is :", position.coords.latitude);
       console.log("Longitude is :", position.coords.longitude);
+      console.log(position.coords.latitude, position.coords.longitude);
       if ("geolocation" in navigator) {
         console.log("Available");
       } else {
