@@ -47,31 +47,31 @@ export default class UpdateUser extends Component {
       });
   }
 
-  onChangeStudentName(e) {
+  onChangeUserUserName(e) {
     this.setState({ name: e.target.value });
   }
 
-  onChangeStudentEmail(e) {
+  onChangeUserEmail(e) {
     this.setState({ email: e.target.value });
   }
 
-  onChangeStudentRollno(e) {
+  onChangeUserCity(e) {
     this.setState({ city: e.target.value });
   }
 
-  onChangeStudentRollno(e) {
+  onChangeUserState(e) {
     this.setState({ state: e.target.value });
   }
 
-  onChangeStudentRollno(e) {
+  onChangeUserCountry(e) {
     this.setState({ country: e.target.value });
   }
 
-  onChangeStudentRollno(e) {
+  onChangeUserAboutMe(e) {
     this.setState({ aboutMe: e.target.value });
   }
 
-  onChangeStudentRollno(e) {
+  onChangeUserFaveSong(e) {
     this.setState({ faveSong: e.target.value });
   }
 
@@ -90,8 +90,7 @@ export default class UpdateUser extends Component {
 
     axios
       .put(
-        "http://localhost:4000/students/update-student/" +
-          this.props.match.params.id,
+        "mongodb://localhost/KaraokeBuddydb" + this.props.match.params.id,
         userObject
       )
       .then((res) => {
@@ -102,7 +101,7 @@ export default class UpdateUser extends Component {
         console.log(error);
       });
 
-    // Redirect to Student List
+    // Redirects to List of Users
     this.props.history.push("/userProfile");
   }
 
