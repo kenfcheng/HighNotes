@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Table from "react-bootstrap/Table";
-import UserTableRow from "./UserTableRow";
+import UserTableRow from "./userTableRow";
 
 export default class UserProfile extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ export default class UserProfile extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:4000/students/")
+      .get("mongodb://localhost/KaraokeBuddydb")
       .then((res) => {
         this.setState({
           users: res.data,

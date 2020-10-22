@@ -61,7 +61,7 @@ const SignUp = () => {
           id="inputUsername"
           className="form-control"
           name="username"
-          placeholder="Email address"
+          placeholder="Username"
           value={signUpCreds.username}
           onChange={handleChange}
         />
