@@ -1,7 +1,7 @@
 import React from "react";
-import UserProfile from "../components/userProfile";
-import UpdateProfile from "../components/updateUserProfile";
-import DeleteProfile from "../components/deleteUserProfile";
+import UserProfile from "../components/UserProfile/userProfile";
+import UpdateProfile from "../components/UserProfile/updateUserProfile";
+import DeleteProfile from "../components/UserProfile/deleteUserProfile";
 
 const publicProfile = () => {
   return (

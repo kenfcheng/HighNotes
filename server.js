@@ -43,6 +43,12 @@ app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
 
+// User Profile
 app.post("/api", (req, res) => {
+  console.log(req);
+});
+
+// Pictures
+app.post("api/image-upload", (req, res) => {
   console.log(req);
 });

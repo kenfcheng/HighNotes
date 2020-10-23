@@ -30,7 +30,7 @@ export default class UpdateUser extends Component {
 
   componentDidMount() {
     axios
-      .get("mongodb://localhost/KaraokeBuddydb" + this.props.match.params.id)
+      .get("/api/userprofile" + this.props.match.params.id)
       .then((res) => {
         this.setState({
           name: res.data.name,
@@ -89,10 +89,7 @@ export default class UpdateUser extends Component {
     };
 
     axios
-      .put(
-        "mongodb://localhost/KaraokeBuddydb" + this.props.match.params.id,
-        userObject
-      )
+      .put("/api/userprofile" + this.props.match.params.id, userObject)
       .then((res) => {
         console.log(res.data);
         console.log("User updated");

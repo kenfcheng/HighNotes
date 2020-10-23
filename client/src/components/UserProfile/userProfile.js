@@ -14,7 +14,7 @@ export default class UserProfile extends Component {
   componentDidMount() {
     axios
 
-      .get("/api")
+      .get("/api/userprofile")
       .then((res) => {
         this.setState({
           users: res.data,
