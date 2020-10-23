@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Spinner from "./Spinner";
-import Images from "./Images";
-import Buttons from "./Buttons";
+import Spinner from "../components/Images/photoSpinner";
+import Images from "../components/Images/image";
+import Buttons from "../components/Images/button";
 import { api } from "./config";
 import "./App.css";
 
-export default class App extends Component {
+export default class MainPhotoComponent extends Component {
   state = {
     uploading: false,
     images: [],
