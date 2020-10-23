@@ -1,4 +1,5 @@
 // import googMap from '../components/googMap';
+// import getCurrentPosition from '../components/currentPosition';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Button } from '@progress/kendo-react-buttons';
