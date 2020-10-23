@@ -4,12 +4,19 @@ const username = request.get("username");
 const password = request.get("password");
 const email = request.get("email");
 const aboutMe = request.get("aboutMe");
+const city = request.get("country");
+const state = request.get("state");
+const country = request.get("country");
 
 // create user
 const userLoginInfo = DatabaseUser.signUp(databaseId, {
   username: username,
   email: email,
   password: password,
+  city: city,
+  state: state,
+  country: country,
+
   aboutMe: aboutMe,
 });
 
@@ -17,6 +24,9 @@ const userLoginInfo = DatabaseUser.signUp(databaseId, {
 const userProfileInfo = Collection.createObject(databaseId, "UserProfile", {
   email: email,
   username: username,
+  city: city,
+  state: state,
+  country: country,
 });
 
 // link

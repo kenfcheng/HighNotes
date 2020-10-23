@@ -13,6 +13,7 @@ const SignUp = () => {
     state: "",
     country: "",
     aboutMe: "",
+    faveSong: "",
   });
 
   const handleChange = (event) => {
@@ -34,6 +35,7 @@ const SignUp = () => {
         state: signUpCreds.state,
         country: signUpCreds.country,
         aboutMe: signUpCreds.aboutMe,
+        faveSong: signUpCreds.faveSong,
       })
       .then((response) => {
         if (!response.data.error) {
@@ -59,7 +61,7 @@ const SignUp = () => {
           id="inputUsername"
           className="form-control"
           name="username"
-          placeholder="Email address"
+          placeholder="Username"
           value={signUpCreds.username}
           onChange={handleChange}
         />
@@ -113,6 +115,20 @@ const SignUp = () => {
             value={signUpCreds.state}
             onChange={handleChange}
           />
+          <label
+            htmlFor="inputCountry"
+            className="sr-only container row-1 col-2"
+          >
+            Country
+          </label>
+          <input
+            className="form-control"
+            name="country"
+            placeholder="Country"
+            type="country"
+            value={signUpCreds.country}
+            onChange={handleChange}
+          />
         </div>
         <br></br>
         <label htmFor="inputaboutMe" className="sr-only">
@@ -125,6 +141,19 @@ const SignUp = () => {
           name="aboutMe"
           placeholder="About Me"
           value={signUpCreds.aboutMe}
+          onChange={handleChange}
+        ></textarea>
+        <br></br>
+        <label htmFor="inputfaveSong" className="sr-only">
+          Write About Yourself!
+        </label>
+        <textarea
+          className="form-text container"
+          type="faveSong"
+          id="faveSong"
+          name="faveSong"
+          placeholder="Favorite Song(s)"
+          value={signUpCreds.faveSong}
           onChange={handleChange}
         ></textarea>
 
