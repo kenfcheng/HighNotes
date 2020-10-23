@@ -13,7 +13,8 @@ export default class UserProfile extends Component {
 
   componentDidMount() {
     axios
-      .get("mongodb://localhost/KaraokeBuddydb")
+
+      .get("/api")
       .then((res) => {
         this.setState({
           users: res.data,
