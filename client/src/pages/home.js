@@ -1,6 +1,8 @@
 import React from "react";
 import CurrentPosition from "../components/currentPosition";
-// import GoogMap from "../components/googMap";
+import Profile from "../components/userProfile";
+// import UpdateProfile from "../components/updateUserProfile";
+// import DeleteUser from "../components/deleteUserProfile";
 const Home = (props) => {
   return (
     <div>
@@ -8,6 +10,7 @@ const Home = (props) => {
         <h2>WE ARE LOGGED IN</h2>
       </div>
       <CurrentPosition />
+      <Profile />
     </div>
   );
 };
