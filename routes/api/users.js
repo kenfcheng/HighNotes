@@ -67,4 +67,11 @@ router.post("/logout", (req, res) => {
   }
 });
 
+router.get("/api/userprofile", (req, res) => {
+  if (req.userprofile) {
+  } else {
+    res.json({ userprofile: null });
+  }
+});
+
 module.exports = router;

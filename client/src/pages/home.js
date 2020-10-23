@@ -1,6 +1,6 @@
 import React from "react";
-import CurrentPosition from "../components/currentPosition";
-import Profile from "../components/userProfile";
+import CurrentPosition from "../components/Geolocation/currentPosition";
+import Profile from "../components/UserProfile/userProfile";
 // import UpdateProfile from "../components/updateUserProfile";
 // import DeleteUser from "../components/deleteUserProfile";
 const Home = (props) => {

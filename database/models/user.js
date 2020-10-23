@@ -37,6 +37,11 @@ userSchema.pre("save", function (next) {
   }
 });
 
+// User Profile
+app.get("/api/userprofile", (req, res) => {
+  console.log(req);
+});
+
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
