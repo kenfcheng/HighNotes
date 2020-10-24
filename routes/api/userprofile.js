@@ -1,6 +1,6 @@
 const express = require("express");
 
-const router = express.Router();
+const profilerouter = express.Router();
 
 const Profile = require("../../database/models/userprofile");
 
@@ -12,4 +12,4 @@ router.get("/api/userprofile", (req, res) => {
   console.log("Profile", Profile);
 });
 
-module.exports = router;
+module.exports = profilerouter;

@@ -131,7 +131,7 @@ const SignUp = () => {
           />
         </div>
         <br></br>
-        <label htmFor="inputaboutMe" className="sr-only">
+        <label htmlFor="inputaboutMe" className="sr-only">
           Write About Yourself!
         </label>
         <textarea
@@ -144,7 +144,7 @@ const SignUp = () => {
           onChange={handleChange}
         ></textarea>
         <br></br>
-        <label htmFor="inputfaveSong" className="sr-only">
+        <label htmlFor="inputfaveSong" className="sr-only">
           Write About Yourself!
         </label>
         <textarea
