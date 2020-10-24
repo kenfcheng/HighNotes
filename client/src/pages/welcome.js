@@ -45,7 +45,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 
-class ButtonContainer extends React.Component {
+class Welcome extends React.Component {
   render() {
     return (
       <div className="row example-wrapper">
@@ -61,4 +61,4 @@ class ButtonContainer extends React.Component {
   }
 }
 
-export default ButtonContainer;
+export default Welcome;

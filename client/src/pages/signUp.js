@@ -47,6 +47,21 @@ const SignUp = () => {
       .catch((error) => {
         console.log(error);
       });
+
+    axios
+      .post("/api/userprofile", {
+        username: signUpCreds.username,
+        email: signUpCreds.email,
+
+        city: signUpCreds.city,
+        state: signUpCreds.state,
+        country: signUpCreds.country,
+        aboutMe: signUpCreds.aboutMe,
+        faveSong: signUpCreds.faveSong,
+      })
+      .then((res) => {
+        console.log("UserProfile", res);
+      });
   };
 
   return (

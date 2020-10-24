@@ -6,7 +6,16 @@ const User = require("../../database/models/user");
 const passport = require("../../passport");
 
 router.post("/", (req, res) => {
-  const { username, password } = req.body;
+  const {
+    username,
+    password,
+    email,
+    city,
+    state,
+    country,
+    aboutMe,
+    faveSong,
+  } = req.body;
   console.log("User", User);
 
   User.findOne({ username: username }, (err, user) => {
@@ -26,6 +35,12 @@ router.post("/", (req, res) => {
       const newUser = new User({
         username: username,
         password: password,
+        email: email,
+        city: city,
+        state: state,
+        country: country,
+        aboutMe: aboutMe,
+        faveSong: faveSong,
       });
 
       const savedUser = await User.create(newUser);
@@ -64,13 +79,6 @@ router.post("/logout", (req, res) => {
     res.status(200).json({ msg: "LOGGED OUT" });
   } else {
     res.status(404).json({ msg: "NO USER TO LOGOUT" });
-  }
-});
-
-router.get("/api/userprofile", (req, res) => {
-  if (req.userprofile) {
-  } else {
-    res.json({ userprofile: null });
   }
 });
 

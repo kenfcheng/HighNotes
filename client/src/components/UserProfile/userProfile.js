@@ -7,7 +7,7 @@ export default class UserProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [],
+      users: {},
     };
   }
 
@@ -19,6 +19,7 @@ export default class UserProfile extends Component {
         this.setState({
           users: res.data,
         });
+        console.log(this.state.users);
       })
       .catch((error) => {
         console.log(error);
@@ -26,9 +27,19 @@ export default class UserProfile extends Component {
   }
 
   DataTable() {
-    return this.state.users.map((res, i) => {
-      return <UserTableRow obj={res} key={i} />;
-    });
+    return this.state.users ? (
+      <UserTableRow
+        username={this.state.username}
+        email={this.state.email}
+        city={this.state.city}
+        state={this.state.state}
+        country={this.state.country}
+        aboutMe={this.state.aboutMe}
+        faveSong={this.state.faveSong}
+      />
+    ) : (
+      <tr>Loading...</tr>
+    );
   }
 
   render() {
@@ -38,6 +49,7 @@ export default class UserProfile extends Component {
           <thead>
             <tr>
               <th>Username</th>
+
               <th>Email</th>
               <th>City</th>
               <th>State</th>
