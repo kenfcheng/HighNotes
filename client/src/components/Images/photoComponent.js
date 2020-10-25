@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Spinner from "../components/Images/photoSpinner";
-import Images from "../components/Images/image";
-import Buttons from "../components/Images/button";
+import Spinner from "./photoSpinner";
+import Images from "./image";
+import Buttons from "./button";
 import { api } from "./config";
 import "./App.css";
 
