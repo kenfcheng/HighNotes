@@ -5,7 +5,8 @@ import Navbar from "./components/navbar";
 import Home from "./pages/home";
 import Login from "./pages/login";
 import Signup from "./pages/signUp";
-import ButtonContainer from "./pages/welcome";
+// import Profile from "./pages/publicProfile";
+
 import { LOADING, SET_USER, UNSET_USER } from "./store/actions";
 import { useStoreContext } from "./store/store";
 
@@ -39,7 +40,6 @@ const App = () => {
         <Switch>
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
-          <Route exact path="/welcome" component={ButtonContainer} />
           <Redirect to="/login" />
         </Switch>
       )}
