@@ -99,7 +99,7 @@ export default class UpdateUser extends Component {
       });
 
     // Redirects to List of Users
-    this.props.history.push("/userProfile");
+    this.props.history.push("/api/userprofile");
   }
 
   render() {
