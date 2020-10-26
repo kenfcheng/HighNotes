@@ -4,8 +4,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("passport");
 const path = require("path");
-const http = require("http");
-const socketio = require("socket.io");
+
 const messageFormatter = require("./messages");
 const {
   addUser,
@@ -20,6 +19,7 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const io = require("socket.io")(require("http").createServer(app));
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

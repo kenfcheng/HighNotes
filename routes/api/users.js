@@ -2,7 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const User = require("../../database/models/user");
+const User = require("../../database/models");
 const passport = require("../../passport");
 
 router.post("/", (req, res) => {
@@ -67,6 +67,7 @@ router.post("/logout", (req, res) => {
   }
 });
 
+//Routes the User Profile
 router.get("/api/userprofile", (req, res) => {
   if (req.userprofile) {
   } else {
