@@ -14,6 +14,10 @@ const userSchema = new Schema({
   country: { type: String, unique: false, required: false },
   aboutMe: { type: String, unique: false, required: false },
   messages: [{ type: Schema.Types.ObjectID, ref: "Message" }],
+  photo: {
+    type: String,
+    default: "",
+  },
 });
 
 // Define schema methods

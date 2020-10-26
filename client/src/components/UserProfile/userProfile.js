@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import Table from "react-bootstrap/Table";
 import UserTableRow from "./userTableRow";
+import Photo from "../Images/photo";
+import Grid, { Col, Row, Container } from "../Images/grid";
 
 export default class UserProfile extends Component {
   constructor(props) {

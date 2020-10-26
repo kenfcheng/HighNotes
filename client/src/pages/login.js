@@ -42,9 +42,9 @@ const Login = () => {
   };
 
   return (
-    <div className="text-center">
+    <div className="container text-center">
       <h4>Login</h4>
-      <form className="form-signin">
+      <form className="container form-signin">
         <label htmlFor="inputEmail" className="sr-only">
           Email address
         </label>
