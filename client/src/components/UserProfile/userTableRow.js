@@ -6,15 +6,15 @@ export default class UserTablerow extends Component {
   render() {
     return (
       <tr>
-        <td>{this.props.obj.username}</td>
-        <td>{this.props.obj.email}</td>
-        <td>{this.props.obj.city}</td>
-        <td>{this.props.obj.state}</td>
-        <td>{this.props.obj.country}</td>
-        <td>{this.props.obj.aboutMe}</td>
-        <td>{this.props.obj.faveSong}</td>
+        <td>{this.props.username}</td>
+        <td>{this.props.email}</td>
+        <td>{this.props.city}</td>
+        <td>{this.props.state}</td>
+        <td>{this.props.country}</td>
+        <td>{this.props.aboutMe}</td>
+        <td>{this.props.faveSong}</td>
         <td>
-          <Link className="edit-link" to={"/edit-user/" + this.props.obj._id}>
+          <Link className="edit-link" to={"/edit-user/" + this.props._id}>
             Edit
           </Link>
           <Button size="sm" variant="danger">

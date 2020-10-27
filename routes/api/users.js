@@ -2,7 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const User = require("../../database/models");
+const User = require("../../database/models/user");
 const passport = require("../../passport");
 
 router.post("/", (req, res) => {
@@ -67,12 +67,15 @@ router.post("/logout", (req, res) => {
   }
 });
 
-//Routes the User Profile
-router.get("/api/userprofile", (req, res) => {
-  if (req.userprofile) {
-  } else {
-    res.json({ userprofile: null });
-  }
+router.get("/messages", (req, res) => {
+  User.find({})
+    .populate("messages")
+    .then((dbUser) => {
+      res.json(dbUser);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 });
 
 module.exports = router;

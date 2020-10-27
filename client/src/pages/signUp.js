@@ -38,11 +38,30 @@ const SignUp = () => {
         faveSong: signUpCreds.faveSong,
       })
       .then((response) => {
-        if (!response.data.error) {
-          history.replace("/login");
-        } else {
-          console.log("USERNAME TAKEN");
-        }
+        console.log(response);
+
+        axios
+          .post("/api/userprofile", {
+            username: signUpCreds.username,
+            email: signUpCreds.email,
+
+            city: signUpCreds.city,
+            state: signUpCreds.state,
+            country: signUpCreds.country,
+            aboutMe: signUpCreds.aboutMe,
+            faveSong: signUpCreds.faveSong,
+          })
+
+          .then((response) => {
+            if (!response.data.error) {
+              history.replace("/login");
+            } else {
+              console.log("USERNAME TAKEN");
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
       .catch((error) => {
         console.log(error);
