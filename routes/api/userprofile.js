@@ -14,12 +14,6 @@ router.get("/", (req, res) => {
       return;
     }
 
-    // if (profile) {
-    //   res.json({
-    //     error: `Sorry, already a profile with the username: ${req.user.username}`,
-    //   });
-    //   return;
-    // }
     console.log(profile);
     if (req.user.username) {
       res.json({ userprofile: profile });

@@ -1,27 +1,71 @@
 import React, { Component } from "react";
+import { Card } from "react-bootstrap";
+import { CustomPlaceholder } from "react-placeholder-image";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import UpdateUser from "../UserProfile/updateUserProfile";
+import axios from "axios";
+// import { titles } from "../../style/profile.css";
 
 export default class UserTablerow extends Component {
+  constructor(props) {
+    super(props);
+    this.deleteUser = this.deleteUser.bind(this);
+  }
+  deleteUser() {
+    axios
+      .delete("/api/userprofile" + this.props._id)
+      .then((res) => {
+        console.log("User deleted!");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
   render() {
     return (
-      <tr>
-        <td>{this.props.username}</td>
-        <td>{this.props.email}</td>
-        <td>{this.props.city}</td>
-        <td>{this.props.state}</td>
-        <td>{this.props.country}</td>
-        <td>{this.props.aboutMe}</td>
-        <td>{this.props.faveSong}</td>
-        <td>
-          <Link className="edit-link" to={"/edit-user/" + this.props._id}>
-            Edit
-          </Link>
-          <Button size="sm" variant="danger">
-            Delete
-          </Button>
-        </td>
-      </tr>
+      <div className="container center-row">
+        <CustomPlaceholder
+          width={400}
+          height={400}
+          className="margin-right-30"
+        />
+        <Card.Title>
+          Username:
+          <a>{this.props.username}</a>
+        </Card.Title>
+        <Card.Title>
+          City:
+          <a>{this.props.city}</a>
+        </Card.Title>
+        <Card.Title>
+          State:
+          <a>{this.props.state}</a>
+        </Card.Title>
+        <Card.Title>
+          Country:
+          <a>{this.props.country}</a>
+        </Card.Title>
+        <Card.Title>
+          About Me:
+          <a>{this.props.aboutMe}</a>
+        </Card.Title>
+        <Card.Title>
+          Favorite Song(s):
+          <a>{this.props.faveSong}</a>
+        </Card.Title>
+        <Button>
+          Edit
+          <Link
+            className="edit-link"
+            to={"/updateUserProfile/" + this.props.id}
+          ></Link>
+        </Button>
+                  
+        <Button onClick={this.deleteUser} size="sm" variant="danger">
+          Delete
+        </Button>
+      </div>
     );
   }
 }

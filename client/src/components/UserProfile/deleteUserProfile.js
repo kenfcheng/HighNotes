@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
 
-export default class UserTableRow extends Component {
+export default class DeleteUserTableRow extends Component {
   constructor(props) {
     super(props);
     this.deleteUser = this.deleteUser.bind(this);
@@ -11,7 +11,7 @@ export default class UserTableRow extends Component {
 
   deleteUser() {
     axios
-      .delete('mongodb://localhost/KaraokeBuddydb"' + this.props.obj._id)
+      .delete("/api/userprofile" + this.props.obj._id)
       .then((res) => {
         console.log("User deleted!");
       })
@@ -23,17 +23,17 @@ export default class UserTableRow extends Component {
   render() {
     return (
       <tr>
-        <td>{this.props.obj.user}</td>
-        <td>{this.props.obj.email}</td>
-        <td>{this.props.obj.city}</td>
-        <td>{this.props.obj.state}</td>
-        <td>{this.props.obj.country}</td>
-        <td>{this.props.obj.aboutMe}</td>
-        <td>{this.props.obj.faveSong}</td>
+        <td>{this.props.obj.ser}</td>
+        <td>{this.props.email}</td>
+        <td>{this.props.city}</td>
+        <td>{this.props.state}</td>
+        <td>{this.props.country}</td>
+        <td>{this.props.aboutMe}</td>
+        <td>{this.props.faveSong}</td>
         <td>
           <Link
             className="edit-link"
-            to={"/updateUserProfile/" + this.props.obj._id}
+            to={"/updateUserProfile/" + this.props.id}
           >
             Edit
           </Link>

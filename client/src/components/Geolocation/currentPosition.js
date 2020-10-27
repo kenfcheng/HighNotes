@@ -24,7 +24,7 @@ class CurrentPosition extends Component {
   render() {
     return (
       <div>
-        <h4>Current Postion Render Test</h4>
+        <h4></h4>
       </div>
     );
   }
