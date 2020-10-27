@@ -7,14 +7,14 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import { StoreProvider } from "./store/store";
 import "bootstrap/dist/css/bootstrap.css";
-import ButtonContainer from "./pages/welcome";
+import ButtonContainer, { MapContainer } from "./pages/welcome";
 import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <StoreProvider>
-        <App />
+        <MapContainer />
       </StoreProvider>
     </Router>
   </React.StrictMode>,
