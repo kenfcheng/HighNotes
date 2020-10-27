@@ -67,4 +67,15 @@ router.post("/logout", (req, res) => {
   }
 });
 
+router.get("/messages", (req, res) => {
+  User.find({})
+    .populate("messages")
+    .then((dbUser) => {
+      res.json(dbUser);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
 module.exports = router;

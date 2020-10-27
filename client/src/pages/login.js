@@ -42,18 +42,18 @@ const Login = () => {
   };
 
   return (
-    <div className="text-center">
+    <div className="container text-center">
       <h4>Login</h4>
-      <form className="form-signin">
-        <label htmlFor="inputEmail" className="sr-only">
-          Email address
+      <form className="container form-signin">
+        <label htmlFor="inputusername" className="sr-only">
+          Username
         </label>
         <input
           type="email"
-          id="inputEmail"
+          id="inputusername"
           className="form-control"
           name="username"
-          placeholder="Email address"
+          placeholder="Username"
           value={loginCreds.username}
           onChange={handleChange}
         />
@@ -70,7 +70,7 @@ const Login = () => {
           onChange={handleChange}
         />
         <button
-          className="btn btn-lg btn-primary btn-block"
+          className="btn btn-lg btn-secondary btn-block"
           type="submit"
           onClick={handleSubmit}
         >

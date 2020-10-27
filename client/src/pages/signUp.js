@@ -13,6 +13,7 @@ const SignUp = () => {
     state: "",
     country: "",
     aboutMe: "",
+    faveSong: "",
   });
 
   const handleChange = (event) => {
@@ -34,13 +35,33 @@ const SignUp = () => {
         state: signUpCreds.state,
         country: signUpCreds.country,
         aboutMe: signUpCreds.aboutMe,
+        faveSong: signUpCreds.faveSong,
       })
       .then((response) => {
-        if (!response.data.error) {
-          history.replace("/login");
-        } else {
-          console.log("USERNAME TAKEN");
-        }
+        console.log(response);
+
+        axios
+          .post("/api/userprofile", {
+            username: signUpCreds.username,
+            email: signUpCreds.email,
+
+            city: signUpCreds.city,
+            state: signUpCreds.state,
+            country: signUpCreds.country,
+            aboutMe: signUpCreds.aboutMe,
+            faveSong: signUpCreds.faveSong,
+          })
+
+          .then((response) => {
+            if (!response.data.error) {
+              history.replace("/login");
+            } else {
+              console.log("USERNAME TAKEN");
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
       .catch((error) => {
         console.log(error);
@@ -59,7 +80,7 @@ const SignUp = () => {
           id="inputUsername"
           className="form-control"
           name="username"
-          placeholder="Email address"
+          placeholder="Username"
           value={signUpCreds.username}
           onChange={handleChange}
         />
@@ -113,9 +134,23 @@ const SignUp = () => {
             value={signUpCreds.state}
             onChange={handleChange}
           />
+          <label
+            htmlFor="inputCountry"
+            className="sr-only container row-1 col-2"
+          >
+            Country
+          </label>
+          <input
+            className="form-control"
+            name="country"
+            placeholder="Country"
+            type="country"
+            value={signUpCreds.country}
+            onChange={handleChange}
+          />
         </div>
         <br></br>
-        <label htmFor="inputaboutMe" className="sr-only">
+        <label htmlFor="inputaboutMe" className="sr-only">
           Write About Yourself!
         </label>
         <textarea
@@ -125,6 +160,19 @@ const SignUp = () => {
           name="aboutMe"
           placeholder="About Me"
           value={signUpCreds.aboutMe}
+          onChange={handleChange}
+        ></textarea>
+        <br></br>
+        <label htmlFor="inputfaveSong" className="sr-only">
+          Write About Yourself!
+        </label>
+        <textarea
+          className="form-text container"
+          type="faveSong"
+          id="faveSong"
+          name="faveSong"
+          placeholder="Favorite Song(s)"
+          value={signUpCreds.faveSong}
           onChange={handleChange}
         ></textarea>
 
