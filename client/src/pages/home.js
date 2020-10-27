@@ -2,17 +2,25 @@ import React from "react";
 import CurrentPosition from "../components/Geolocation/currentPosition";
 import Profile from "../components/UserProfile/userProfile";
 import ChatArea from "../components/Chat/ChatArea";
+
 // import UpdateProfile from "../components/updateUserProfile";
 // import DeleteUser from "../components/deleteUserProfile";
+//import MainPhotoComponent from "../components/Images/photoComponent";
 const Home = (props) => {
   return (
-    <div>
+    <div style={{ backgroundColor: "lightblue" }}>
       <div>
-        <h2>WE ARE LOGGED IN</h2>
+        <h2 className="container center-row">WELCOME!</h2>
       </div>
+
       <CurrentPosition />
-      <Profile />
-      <ChatArea />
+      <div className="container center-row">
+        <Profile />
+      </div>
+      <br></br>
+      <div className="container">
+        <ChatArea />
+      </div>
     </div>
   );
 };

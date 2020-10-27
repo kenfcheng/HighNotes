@@ -7,6 +7,7 @@ const aboutMe = request.get("aboutMe");
 const city = request.get("country");
 const state = request.get("state");
 const country = request.get("country");
+const faveSong = request.get("faveSong");
 
 // create user
 const userLoginInfo = DatabaseUser.signUp(databaseId, {
@@ -16,7 +17,7 @@ const userLoginInfo = DatabaseUser.signUp(databaseId, {
   city: city,
   state: state,
   country: country,
-
+  faveSong: faveSong,
   aboutMe: aboutMe,
 });
 

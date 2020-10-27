@@ -70,7 +70,7 @@ const Login = () => {
           onChange={handleChange}
         />
         <button
-          className="btn btn-lg btn-primary btn-block"
+          className="btn btn-lg btn-secondary btn-block"
           type="submit"
           onClick={handleSubmit}
         >

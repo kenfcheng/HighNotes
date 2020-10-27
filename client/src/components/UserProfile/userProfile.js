@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Table from "react-bootstrap/Table";
+// import Table from "react-bootstrap/Table";
 import UserTableRow from "./userTableRow";
 // import Photo from "../Images/photo";
 // import Grid, { Col, Row, Container } from "../Images/grid";
+import { Card } from "react-bootstrap";
 
 export default class UserProfile extends Component {
   constructor(props) {
@@ -57,22 +58,12 @@ export default class UserProfile extends Component {
 
   render() {
     return (
-      <div className="table-wrapper">
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>Username</th>
-              <th>Email</th>
-              <th>City</th>
-              <th>State</th>
-              <th>Country</th>
-              <th>About Me</th>
-              <th>Favorite Song</th>
-            </tr>
-          </thead>
-          <tbody>{this.DataTable()}</tbody>
-        </Table>
-      </div>
+      <Card>
+        <br></br>
+        <br></br>
+        {this.DataTable()}
+             
+      </Card>
     );
   }
 }
