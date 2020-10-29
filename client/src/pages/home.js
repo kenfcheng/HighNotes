@@ -9,6 +9,9 @@ import ChatArea from "../components/Chat/ChatArea";
 const Home = (props) => {
   return (
     <div style={{ backgroundColor: "lightblue" }}>
+      <br></br>
+      <br></br>
+      <br></br>
       <div>
         <h2 className="container center-row">WELCOME!</h2>
       </div>

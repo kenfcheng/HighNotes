@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import { CustomPlaceholder } from "react-placeholder-image";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import UpdateUser from "../UserProfile/updateUserProfile";
+// import UpdateUser from "../UserProfile/updateUserProfile";
 import axios from "axios";
 // import { titles } from "../../style/profile.css";
 
@@ -28,12 +28,14 @@ export default class UserTablerow extends Component {
         <CustomPlaceholder
           width={400}
           height={400}
-          className="margin-right-30"
+          className="margin-right-30 float-left-20"
         />
-        <Card.Title>
-          Username:
-          <a>{this.props.username}</a>
-        </Card.Title>
+        <ul>
+          <Card.Title>
+            Username:
+            <a>{this.props.username}</a>
+          </Card.Title>
+        </ul>
         <Card.Title>
           City:
           <a>{this.props.city}</a>

@@ -3,6 +3,8 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { LOADING, UNSET_USER } from "../store/actions";
 import { useStoreContext } from "../store/store";
+import { logo } from "../pages/kbLogo.png";
+import styles from "../style/navbar.css";
 
 const Navbar = () => {
   const [state, dispatch] = useStoreContext();
@@ -27,9 +29,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light container-fluid">
       <Link to="/" className="btn btn-link text-secondary">
-        <span className="text-secondary">home</span>
+        <img src={logo} alt="Home" className={styles.photo} />
       </Link>
       <button
         className="navbar-toggler"
@@ -42,7 +44,10 @@ const Navbar = () => {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
+      <div
+        className="collapse navbar-collapse flex flex-auto flex-wrap p-14"
+        id="navbarNav"
+      >
         <ul className="navbar-nav">
           {state.user ? (
             <li className="nav-item active">
