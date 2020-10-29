@@ -1,0 +1,11 @@
+.mainFont {
+  font-size: x-large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #562f9e;
+}
+
+.loginBox {
+  padding: 50px;
+  margin: 50px;
+  background-color: mediumslateblue;
+}

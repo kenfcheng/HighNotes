@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { LOADING, SET_USER } from "../store/actions";
 import { useStoreContext } from "../store/store";
+import { Card } from "react-bootstrap";
+import loginStyles from "../style/login.css";
 
 const Login = () => {
   const [, /* state */ dispatch] = useStoreContext();
@@ -42,41 +44,46 @@ const Login = () => {
   };
 
   return (
-    <div className="container text-center">
-      <h4>Login</h4>
-      <form className="container form-signin">
-        <label htmlFor="inputusername" className="sr-only">
-          Username
-        </label>
-        <input
-          type="email"
-          id="inputusername"
-          className="form-control"
-          name="username"
-          placeholder="Username"
-          value={loginCreds.username}
-          onChange={handleChange}
-        />
-        <label htmlFor="inputPassword" className="sr-only">
-          Password
-        </label>
-        <input
-          type="password"
-          id="inputPassword"
-          className="form-control"
-          name="password"
-          placeholder="Password"
-          value={loginCreds.password}
-          onChange={handleChange}
-        />
-        <button
-          className="btn btn-lg btn-secondary btn-block"
-          type="submit"
-          onClick={handleSubmit}
-        >
-          Login
-        </button>
-      </form>
+    <div className="container text-center" styles={loginStyles.loginBox}>
+      <br></br>
+      <br></br>
+      <Card>
+        <h4 className={loginStyles.mainFont}>Login</h4>
+
+        <form className="container form-signin">
+          <label htmlFor="inputusername" className="sr-only">
+            Username
+          </label>
+          <input
+            type="email"
+            id="inputusername"
+            className="form-control"
+            name="username"
+            placeholder="Username"
+            value={loginCreds.username}
+            onChange={handleChange}
+          />
+          <label htmlFor="inputPassword" className="sr-only">
+            Password
+          </label>
+          <input
+            type="password"
+            id="inputPassword"
+            className="form-control"
+            name="password"
+            placeholder="Password"
+            value={loginCreds.password}
+            onChange={handleChange}
+          />
+          <button
+            className="btn btn-lg btn-secondary btn-block"
+            type="submit"
+            onClick={handleSubmit}
+          >
+            Login
+          </button>
+        </form>
+      </Card>
     </div>
   );
 };
