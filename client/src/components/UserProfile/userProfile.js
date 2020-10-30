@@ -52,7 +52,7 @@ export default class UserProfile extends Component {
         faveSong={faveSong}
       />
     ) : (
-      <tr>Loading...</tr>
+      <div>Loading...</div>
     );
   }
 

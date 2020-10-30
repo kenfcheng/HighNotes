@@ -27,7 +27,7 @@ export default function ChatSide() {
     <>
       <ul className={chatSidebar}>
         <h3 className={chatSidebarH3}>
-          <i class="fas fa-users"></i>&nbsp;&nbsp;&nbsp;Friends
+          <i className="fas fa-users"></i>&nbsp;&nbsp;&nbsp;Friends
         </h3>
         {loaded ? (
           friends.map((friend) => {
